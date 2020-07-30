@@ -1,3 +1,65 @@
 body {
+    font-family: Montserrat;
     text-align: center;
+    background-color: #eeeeee;
+    /* background-image: url("images/4.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: top; */
+}
+.inputRow {
+    margin-bottom: 30px;
+}
+.input {
+    font-family: Montserrat;
+    border-radius: 0px;
+    border: 1px solid grey;
+    outline: none;
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+}
+.input:focus {
+    border: 1px solid blue;
+}
+.add, .del {
+    font-family: Montserrat;
+    font-size: 16px;
+    border-radius: 0px;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    outline: none;
+    background-color: #007BFF;
+    color: white;
+}
+.del {
+    background-color: #DC3545;
+}
+.add:hover {
+    cursor: pointer;
+    background-color: #0069d9;
+}
+.del:hover {
+    cursor: pointer;
+    background-color: #c82333;
+}
+.main {
+    font-size: 18px;
+    font-weight: 700;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #cfcfcf44;
+    margin: 10px auto;
+    padding: 10px 0px;
+}
+.fas {
+    font-size: 22px;
+    margin: 0px 10px;
+}
+.badge {
+    color: rgb(107, 107, 107);
+    font-size: 12px;
 }

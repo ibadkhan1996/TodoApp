@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 
 <body>
-    <div>
-        <input type="text" name="value" id="val" placeholder="Enter Todo">
-        <button onclick="addItem()">Add</button>
-        <button onclick="deleteAll()">Delete All</button>
-    </div>
-    <div>
-        <ul id="list">
-
-        </ul>
+    <div class="main">
+        <h1>Todo <span style="font-weight: 300;color: grey;">App</span></h1>
+        <div class="inputRow">
+            <input type="text" name="value" id="input" placeholder="Enter Todo" class="input">
+            <button onclick="addItem()" class="add">Add Item</button>
+            <button onclick="deleteAll()" class="del">Delete All</button>
+        </div>
+        <div id="list">
+            
+        </div>
     </div>
 </body>
 <script src="app.js"></script>
