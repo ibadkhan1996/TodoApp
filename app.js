@@ -1,3 +1,15 @@
+// Counter
+var counter = 0;
+var counterSpan = document.getElementById("counter");
+counterSpan.innerHTML = counter;
+
+// Counter Function
+function countFunc(e){
+    counter += e;
+    counterSpan.innerHTML = counter;
+}
+
+// Add Item Function
 function addItem(){
     // Create List Item
     var list = document.getElementById("list");
@@ -41,33 +53,43 @@ function addItem(){
     item.appendChild(btnsDiv);
     list.appendChild(item);
     input.value = "";
+
+    // Counter Increment
+    countFunc(1);
 }
 // Delete All Function
 function deleteAll(){
     var list = document.getElementById("list");
     list.innerHTML = "";
+
+    // Counter to zero
+    counter = 0;
+    counterSpan.innerHTML = counter;
 }
 // Delete Item Function
 function deleteItem(del){
     del.parentNode.parentNode.remove();
+
+    // Counter Decrement
+    countFunc(-1);
 }
-
-// Create Done Badge element
-
 // Edit Item Function
 function editItem(edit){
     var val = edit.parentNode.parentNode.firstChild.firstChild;
-    var newVal = prompt("Enter new Todo",val.firstChild.nodeValue);
-    var sup = val.parentNode.lastChild;
-    val.firstChild.nodeValue = (newVal.slice(0,1)).toUpperCase() + (newVal.slice(1)).toLowerCase();
+    var newVal = prompt("Enter new Todo",val.innerHTML);
+    val.innerHTML = (newVal.slice(0,1)).toUpperCase() + (newVal.slice(1)).toLowerCase();
     val.style.color = "#000";
     val.style.textDecoration = "none";
+    var sup = val.parentNode.lastChild;
     if(sup.nodeName == "SUP"){
         sup.remove();
     }
     else{
         console.log(sup.nodeName);
     }
+    var enableDoneBtn = edit.parentNode.firstChild;
+    enableDoneBtn.style.color = "#28A745";
+    enableDoneBtn.style.pointerEvents = "all";
 }
 // Task Done Function
 function doneItem(e){
@@ -79,4 +101,6 @@ function doneItem(e){
     task.appendChild(badge);
     task.firstChild.style.color = "#28A745";
     task.firstChild.style.textDecoration = "line-through";
+    e.style.pointerEvents = "none";
+    e.style.color = "#8d8d8d";
 }
